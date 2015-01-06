@@ -1,0 +1,105 @@
+<%
+            voller_name = {"mk" : "Markus", "Sorry" : "Sorry"}
+%>
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A layout example with a side menu that hides on mobile, just like the Pure website.">
+
+
+    <title>Offene Bibel - Layout Example</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">  
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" href="css/layouts/side-menu-old-ie.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+        <link rel="stylesheet" href="/css/side-menu.css">
+        <link rel="stylesheet" href="/css/ob.css">
+    <!--<![endif]-->
+    
+</head>
+<body>
+
+<div id="layout">
+    <!-- Menu toggle -->
+    <a href="#menu" id="menuLink" class="menu-link">
+        <!-- Hamburger icon -->
+        <span></span>
+    </a>
+
+    <div id="menu">
+        <div class="pure-menu pure-menu-open">
+            <a class="pure-menu-heading" href="#">Offene Bibel</a>
+
+            <form class="pure-form">
+                <input value="search..?" type="text" class="pure-input">
+            </form>
+
+            <ul>
+                <li><a href="/{{buch}}/">{{voller_name[buch]}}</a></li>
+                
+            
+                <li><a href="/{{buch}}/{{kapitel}}/wm/">get WikiMarkup</a></li>
+            
+            </ul>
+            <ul>
+                % for chapter_no in range(int(chapters)):
+                    % if str(chapter_no+1) == kapitel:
+                        <li><a href="/{{buch}}/{{chapter_no+1}}/" class="menu-item-divided pure-menu-selected">Kapitel {{chapter_no+1}}</a></li>
+                    % else:
+                        <li><a href="/{{buch}}/{{chapter_no+1}}/">Kapitel {{chapter_no+1}}</a></li>
+                    % end
+                % end
+            </ul>
+            
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="header">
+            
+            <h1>Offene Bibel - {{voller_name[buch]}} {{kapitel}}</h1>
+<%
+oblink = "http://www.offene-bibel.de/wiki/index.php5?title="+voller_name[buch]
+obtext = "offene-bibel.de/"+voller_name[buch]
+if kapitel:
+    oblink += "_"+str(kapitel)
+    obtext += "_"+str(kapitel)
+end
+%>
+            <h2>original source: <a target="blank" href="{{oblink}}">{{obtext}}</a></h2>
+        </div>
+
+        <div class="content">
+            
+        %if type(sections) == list:
+            <div class="pure-g bibeltext">
+            <!-- BIBEL ANFANG --->
+            %#include(buch+"/"+kapitel+".tmpl")
+            %include("bibeltext.tmpl")
+            <!--- BIBEL --->
+            </div>
+        %else:
+            {{!sections}}
+            
+            <section>
+              <p class="all_chapters">
+                % for chapter in range(chapters):
+                <a href="/{{buch}}/{{chapter+1}}">{{voller_name[buch]}} {{chapter+1}}</a>
+                % if chapter+1 != chapters:
+                    <span class="chapter_seperator"> | </span>
+                % end
+                % end
+              </p>
+            </section>
+        %end
+          </div>
+        </div>
+    </div>
+</div>
+    <script src="/js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+/*
+    pyBibel - a bible webviewer
+    (gpl v3) by Tobias Sauer
+    http://tobi.leichtdio.de
+    part of
+        - Dreifach Glauben : http://dreifachglauben.de
+        - Offene Bibel : http://offene-bibel.de/
+        - Leichtdio.de : http://leichtdio.de
+    tobias [at] leichtdio . de   
+*/
+
+::-moz-selection { 
+background-color: #ff5722; 
+color: #ffffff;
+}
+
+::selection {
+background-color: #ff5722;
+color: #ffffff;
+}
+
+/*
+	Chapter Intro Page
+*/
+
+.all_chapters {
+	font-size: 80%;
+	text-align: center;
+}
+
+/* /Chapter Intro Page */
+
+.bibeltext {
+    font-size: 1.4rem;
+    color: #212121;
+    font-family: 'Roboto', sans-serif; !important
+}
+
+ref {
+	display:none;
+}
+
+.versnr {
+  font-size: 0.7rem;
+  color: #ff5722;
+}
+
+section {
+    padding-bottom: 2rem;
+}
+
+
+a {
+    color: #ff5722;
+    text-decoration: none;
+
+}
+
+/* Erklärungen, Sidebar 
+*/
+
+.sidebar h4 {
+    font-size: 1.0rem;
+    color: #212121;
+}
+
+.sidebar a {
+    color: #ff5722;
+    text-decoration: none;
+    font-size: 1.0rem;
+}
+
+.sidebar a:hover {
+    text-decoration: underline; 
+}
+
+.sidebar li:before {
+    content: "";
+}
+
+.sidebar li {
+   list-style-type: none; !important
+   padding-bottom: 50px; !important
+}
+
+/*
+.versnr {
+    font-size: 200%;
+}
+*/

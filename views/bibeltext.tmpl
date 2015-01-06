@@ -1,0 +1,21 @@
+
+	% for section in sections:
+		<div class="pure-u-3-5">
+			<section>
+				<h3>{{section["headline"]}}</h3>
+				% for vers in section["verse"]:
+				    <p><a href="#{{vers[0]}}" id="{{vers[0]}}" class="versnr">{{vers[0]}}</a> {{!vers[1]}}</p>
+		        % end
+		</div>
+
+		<div class="pure-u-2-5">
+			<!--- Anmerkungen --->
+			    <ul class="sidebar">
+			      <h4>Erklärungen</h4>
+			    % for entry in section["lexikon_entrys"]:
+			        <li><a href="/lexi/{{entry.replace(" ","").lower()}}">{{entry}}</a></li>
+			    %end
+			    </ul>
+		</div>
+		</section>
+	% end

@@ -1,0 +1,11 @@
+% for section in sections:
+={{section["headline"]}}=
+	% for vers in section["verse"]:
+	    <%
+	    #leider ein kleiner WorkAround, aber es funktioniert ... ;)
+	    out = "{{L|%s}} %s" %(vers[0], vers[1])
+	    %>
+    {{!out}}
+    % end
+
+% end
