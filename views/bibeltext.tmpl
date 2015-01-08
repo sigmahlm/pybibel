@@ -2,7 +2,9 @@
 	% for section in sections:
 		<div class="pure-u-3-5">
 			<section>
+				% if section.has_key("headline"):
 				<h3>{{section["headline"]}}</h3>
+				% end
 				% for vers in section["verse"]:
 				    <p><a href="#{{vers[0]}}" id="{{vers[0]}}" class="versnr">{{vers[0]}}</a> {{!vers[1]}}</p>
 		        % end

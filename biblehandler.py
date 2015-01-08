@@ -62,6 +62,7 @@ class BibleHandler:
         json_content = self.json_content
         sec_headlines = json_content["sections"]
         text = json_content["text"]
+        tmp_section["verse"] = []
         while count != -1:
             if sec_headlines.has_key(str(count)):
                 if tmp_section:

@@ -1,8 +1,5 @@
 {
-    "type" : "chapter",
-    "id" : "ob:tobi",
     "book" : "mk",
-    "name" : "Lesefassung Tobias/Dreifach",
     "copyright" : "http://creativecommons.org/licenses/by-sa/3.0/",
     "sections" : {
         "1" : "Die Prophezeiung",

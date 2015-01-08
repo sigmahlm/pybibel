@@ -4,6 +4,11 @@ pybibel
 a bottlepy based bible webviewer.
 
 
+Bugs/ToDO
+=========
+
+<poem>-Tag wird noch nicht gelesen. vgl. Mk 4, 12
+
 Copyright
 =========
 
