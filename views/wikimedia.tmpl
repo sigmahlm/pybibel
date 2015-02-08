@@ -1,5 +1,7 @@
-% for section in sections:
-={{section["headline"]}}=
+% for section in sections[1:]:
+    ={{section["headline"]}}=
+    
+
 	% for vers in section["verse"]:
 	    <%
 	    #leider ein kleiner WorkAround, aber es funktioniert ... ;)

@@ -61,6 +61,9 @@ def dynamic_text(buch="mk", kapitel=None, render_type="r"):
                 attrb = {"buch":buch, "kapitel":kapitel, "sections":sections, "chapters":int(chapters)}
                 if render_type == "wm":
                     return template("wikimedia.tmpl", attrb)
+                elif render_type == "json":
+                    jsoncontent = bh.json_content
+                    return template("json.tmpl", {"jsoncontent":jsoncontent})
                 else:
                     return template("design.tmpl", attrb)
             else:
